@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Scratch E-Coin</title>
+</head>
+<body bgcolor="violet">
+<center> Welcome to this hidden directory </center>
+This page AJAXes <a href="https://scratch.mit.edu/" title="Scratch"> Scratch </a> which is a project by MIT's Lifelong Kindergarten Group.
+<br/>Ok, so there is nothing here at the moment (A. T. M. in text-talk) but I am testing how Scratch handles AJAX from ites outside of Scratch, especially using the API
+<br/>This site will not likely not ork with IE, so sorry about that <code>:(</code>
+<script>
+var x = new XMLHttpRequest();
+x.onreadystatechange = function(){if(x.status==200&&x.readyState==4){console.log(x.responseText)}}
+x.open("GET", "https://scratch.mit.edu/varserver/111774227", true);
+x.send();
+
+</script>
+</body>
+</html>
