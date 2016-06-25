@@ -20,6 +20,7 @@ var x = new XMLHttpRequest();
 x.open("GET", "https://api.scratch.mit.edu/users/" + document.getElementById("uname").value + "/messages/count");
 x.onreadystatechange = function(){
 if(x.readyState == 4){
+  window.x = JSON.parse(x.responseText);
 var res = JSON.parse(x.responseText);
 if(res.hasOwnProperty("count")){
 document.getElementById("target").innerHTML = x.count;
