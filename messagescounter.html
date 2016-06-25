@@ -3,13 +3,20 @@
 <title>How amny messages does my frend have?</title>
 </head>
 <body>
+  <style>
+  body{
+    text-align: center;
+    background-color: aqua;
+  }
+  </style>
 <h1 style="text-align:center">Have you ever wanted to find out how many unread notifications somebody has on Scratch?</h1>
 You sound like a stalker then (just kidding).<br>
 Enter a person's username: <input placeholder="jokebookservice1" type="text" id="uname" /><br/>
 That person has <span id="target">?</span> unread notifications.
 <b>Auto-Updates every 10 seconds</b>
 <script>
-var x = new XMLHttpRRequest();
+var update = function(){
+var x = new XMLHttpRequest();
 x.open("GET", "https://api.scratch.mit.edu/users/" + document.getElementById("uname").value + "/messages/count");
 x.onreadystatechange = function(){
 if(x.readyState == 4){
@@ -22,6 +29,9 @@ document.getElementById("target").innerHTML = "{Hmm, try another user - that one
 }
 }
 x.send();
+}
+update();
+window.setInterval(update, 10000)
 </script>
 </body>
 </html>
