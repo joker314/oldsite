@@ -23,9 +23,9 @@ if(x.readyState == 4){
   window.x = JSON.parse(x.responseText);
 var res = JSON.parse(x.responseText);
 if(res.hasOwnProperty("count")){
-document.getElementById("target").innerHTML = x.count;
+document.getElementById("target").innerHTML = res.count;
 } else{
-document.getElementById("target").innerHTML = "{Hmm, try another user - that one wasn't exacty found :P}";
+document.getElementById("target").innerHTML = "<span style='color:red'>User not found :(</span>";
 }
 }
 }
