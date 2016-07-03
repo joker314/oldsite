@@ -8,9 +8,9 @@
       var internet = new XMLHttpRequest();
       internet.open("GET", "https://crossorigin.me/https://scratch.mit.edu/projects/" + projectId);
       internet.onreadystatechange = function(){
-        if(internet.readyState == 4){
+        if(internet.readyState == 4){            
+          var t = document.getElementById("target");
           if(internet.status == 200){
-            var t = document.getElementById("target");
             t.innerHTML = "";
             t.innerHTML += "Project with ID <a href='https://scratch.mit.edu/projects/" + projectId + "'>" + projectId + "</a> is ";
             t.innerHTML += (internet.responseText.indexOf("<span>Sorry this project is not shared</span>") == -1)?"shared":"unshared";
@@ -22,7 +22,7 @@
       internet.send();
     </script>
     <div id="target">
-      > Please wait <
+      >> Please wait <<
     </div>
   </body>
 </html>
