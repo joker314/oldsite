@@ -13,7 +13,7 @@
           var t = document.getElementById("target");
           if(internet.status == 200){
             t.innerHTML = "";
-            t.innerHTML += "Project with ID <a href='https://scratch.mit.edu/projects/" + projectId + "'>" + projectId + "</a> is ";
+            t.innerHTML += "Project with ID <a target='_blank' href='https://scratch.mit.edu/projects/" + projectId + "'>" + projectId + "</a> is ";
             t.innerHTML += (internet.responseText.indexOf("<span>Sorry this project is not shared</span>") == -1)?"shared":"unshared";
             if(t.innerHTML.indexOf("unshared") > -1){
               t.innerHTML += "<br/>Trying again in 1 second";
