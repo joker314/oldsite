@@ -16,7 +16,7 @@
             t.innerHTML = "";
             t.innerHTML += "Project with ID <a target='_blank' href='https://scratch.mit.edu/projects/" + projectId + "'>" + projectId + "</a> is shared.";
           } else{
-            t.innerHTML = "Attempt " + window.attempts + "failed. Wait 1 second";
+            t.innerHTML = "Attempt " + window.attempts + " failed. Wait 1 second";
             window.attempts++;
             setTimeout(callback, 1000);
           }
