@@ -3,6 +3,19 @@
     <title>Random Project Finder</title>
   </head>
   <body>
-    Initial Commit :P
+    <script>
+      var projectId = Math.floor(Math.random() * 115480648) + 200;
+      var internet = new XMLHttpRequest();
+      internet.open("GET", "https://crossorigin.me/https://scratch.mit.edu/projects/" + projectId);
+      internet.onreadystatechange = function(){
+        var t = document.getElementById("target").innerHTML;
+        t.innerHTML = "";
+        t.innerHTML += "Project with ID <a href='https://scratch.mit.edu/projects/" + projectId + "'>" + projectId + "</a> is ";
+        t.innerHTML += (internet.responseText.indexOf("<span>Sorry this project is not shared</span>") != -1)?"shared":"unshared";
+      }
+    </script>
+    <div id="target">
+      > Please wait <
+    </div>
   </body>
 </html>
