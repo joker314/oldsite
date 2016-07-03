@@ -4,6 +4,7 @@
   </head>
   <body>
     <script>
+    window.attempts = 0;
     function callback(){
       var projectId = Math.floor(Math.random() * 115480648) + 200;
       var internet = new XMLHttpRequest();
@@ -11,16 +12,12 @@
       internet.onreadystatechange = function(){
         if(internet.readyState == 4){            
           var t = document.getElementById("target");
-          if(internet.status == 200){
+          if(internet.status == 200 && internet.responseText.indexOf("<span>Sorry this project is not shared</span>") == -1){
             t.innerHTML = "";
-            t.innerHTML += "Project with ID <a target='_blank' href='https://scratch.mit.edu/projects/" + projectId + "'>" + projectId + "</a> is ";
-            t.innerHTML += (internet.responseText.indexOf("<span>Sorry this project is not shared</span>") == -1)?"shared":"unshared";
-            if(t.innerHTML.indexOf("unshared") > -1){
-              t.innerHTML += "<br/>Trying again in 1 second";
-              setTimeout(callback, 1000);
-            }
+            t.innerHTML += "Project with ID <a target='_blank' href='https://scratch.mit.edu/projects/" + projectId + "'>" + projectId + "</a> is shared.";
           } else{
-            t.innerHTML = "Project does not exist :P<br/>Trying again in 1 second";
+            t.innerHTML = "Attempt " + window.attempts + "failed. Wait 1 second";
+            window.attempts++;
             setTimeout(callback, 1000);
           }
         }
@@ -30,7 +27,7 @@
     callback();
     </script>
     <div id="target">
-      >>> Loading... <<<
+      >> Loading... <<
     </div>
   </body>
 </html>
