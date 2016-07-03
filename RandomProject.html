@@ -15,6 +15,11 @@
           if(internet.status == 200 && internet.responseText.indexOf("<span>Sorry this project is not shared</span>") == -1){
             t.innerHTML = "";
             t.innerHTML += "Project with ID <a target='_blank' href='https://scratch.mit.edu/projects/" + projectId + "'>" + projectId + "</a> is shared.";
+            t.innerHTML += "You might want to copy this: <br/><textarea>";
+            t.innerHTML += "Hi, @";
+            var user = internet.responseText.replace(/.+<span id="owner">(.+?)</span>.+/i, "$1");
+            t.innerHTML += user;
+            t.innerHTML += " , I am writing a Scratch Newspaper with some ther Scratchers. Do you mind if we write a review of your project? Thanks anyway!";
           } else{
             t.innerHTML = "Attempt " + window.attempts + " failed. Wait 1 second";
             window.attempts++;
