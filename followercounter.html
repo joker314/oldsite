@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>How many followers do you hve on Scratch?</title>
+  </head>
+  <body>
+    <span id="out">...</span>
+    <script>
+      var user = prompt("What is your Scratch username?");
+      function refreshData(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("https://api.scratch.mit.edu/users/" + user + "/followers");
+        xhttp.onreadystatechange = function(){
+          if(xhttp.readyState == 4){
+            document.getElementById("out").innerHTML = JSON.parse(xhttp.responseText).length;
+            setTimeout(refreshData, 10000);
+          }
+        };
+      }
+      refreshData();
+    </script>
+  </body>
+</html>
