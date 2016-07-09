@@ -1,9 +1,12 @@
 <html>
   <head>
     <title>How many followers do you hve on Scratch?</title>
+    <style>
+      #out{font-size:50px;}
+    </style>
   </head>
   <body>
-    <span id="out">...</span>
+    <span id="out">. . .</span>
     <script>
       var user = prompt("What is your Scratch username?");
       function refreshData(){
@@ -15,6 +18,7 @@
             setTimeout(refreshData, 10000);
           }
         };
+        xhttp.send();
       }
       refreshData();
     </script>
