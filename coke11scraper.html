@@ -4,12 +4,18 @@
   </head>
   <body>
     <center>Use the field below. It has a template built-in: use it if you like!
-    <textarea rows="10" cols="20">
-<h1>@username</h1>
-"@comment"
-    </textarea>
+    <textarea rows="10" cols="20"><h1>@username</h1>
+"@comment"</textarea>
     Older comments appear at the <select><option vaue="top">top</option><option vaue="bot">bottom</option></select> of the page.
     <button>Do It!</button>
+    <table>
+      <tbody>
+        <tr><td><b>Code</b></td><td><b>Meaning</b></td></tr>
+        <tr><td>@username</td><td>A linked username to the profile of the person who made the comment</td></tr>
+        <tr><td>@unlinked</td><td>An ulinked username of the person who made the comment</td></tr>
+        <tr><td>@comment</td><td>The text within the comment</td></tr>
+      </tbody>
+    </table>
     </center>
   </body>
 </html>
