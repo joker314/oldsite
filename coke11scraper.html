@@ -12,10 +12,18 @@
             var data = document.createElement("DIV");
             data.innerHTML = xhttp.responseText;
             document.getElementById("playground").appendChild(data);
-            console.log(data.getElementsByClassName("info"));
+            var content = toArray(document.querySelectorAll("#content")).map(function(el){return el.innerHTML;});
+            console.log(d)
           }
         }
         xhttp.send();
+      }
+      function toArray(likeObj){
+        var out = [];
+        for(var i = 0; i < likeObj.length; i++){
+          out.push(likeObj[i]);
+        }
+        return out;
       }
     </script>
   </head>
