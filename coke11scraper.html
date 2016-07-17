@@ -3,6 +3,7 @@
     <title>Coke11's Scraper</title>
     <script>
       function scrapeComments(id, offset){
+        if(offset==1){document.getElementById("result").innerHTML = "Getting data from Scratch servers (my take 10 seconds or so)...";}
         var url = "https://crossorigin.me/" + "https://scratch.mit.edu/site-api/comments/project/" + id + "/?page=" + offset; 
         var xhttp = new XMLHttpRequest(); //Create an AJAX object
         xhttp.open("GET", url); //Open a request with the URL calculated
@@ -17,6 +18,7 @@
           } else if (xhttp.status == 404){
             var comments = toArray(document.querySelectorAll("#playground > div > li > div > .info > .content")).map(function(el){return el.innerHTML;});
             var posters = toArray(document.querySelectorAll("#playground > div > li > div > .info > .name > a")).map(function(el){return el.innerHTML;});
+            document.getElementById("result").innerHTML = "Data aquired, formatting...";
             console.log(posters);
           }
         }
@@ -47,6 +49,7 @@
         <tr><td>@comment</td><td>The text within the comment</td></tr>
       </tbody>
     </table>
+    <h1 id="result"></h1>
     </center>
   </body>
 </html>
