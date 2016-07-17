@@ -30,7 +30,7 @@
             for(var i = 0; i < posters.length; i++){
               output += format.replace(/@comment/gi, comments[i]).replace(/@username/gi, posters[i])
             }
-            document.getElementById("result").innerHTML = "<textarea>" + output + "</textarea>";
+            document.getElementById("result").innerHTML = "<textarea rows='200' cols='100'>" + output + "</textarea>";
           }
         }
         };
