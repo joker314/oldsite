@@ -13,7 +13,8 @@
             data.innerHTML = xhttp.responseText;
             document.getElementById("playground").appendChild(data);
             var comments = toArray(document.querySelectorAll("#playground > div > li > div > .info > .content")).map(function(el){return el.innerHTML;});
-            console.log(comments)
+            var posters = toArray(document.querySelectorAll("#playground > div > li > div > .info > .name > a")).map(function(el){return el.innerHTML;});
+            console.log(posters)
           }
         }
         xhttp.send();
