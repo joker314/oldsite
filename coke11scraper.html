@@ -13,7 +13,7 @@
             data.innerHTML = xhttp.responseText;
             document.getElementById("playground").appendChild(data);
             var content = toArray(document.querySelectorAll("#content")).map(function(el){return el.innerHTML;});
-            console.log(d)
+            console.log(content)
           }
         }
         xhttp.send();
