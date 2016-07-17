@@ -1,8 +1,25 @@
 <html>
   <head>
     <title>Coke11's Scraper</title>
+    <script>
+      scrapeComments(id, format){
+        var url = "https://crossorigin.me/" + "https://scratch.mit.edu/site-api/comments/project/" + id + "/"; //Work out the URL
+        var xhttp = new XMLHttpRequest(); //Create an AJAX object
+        xhttp.open("GET", url); //Open a request with the URL calculated
+        xhttp.onreadystatechange = function(){ //When the status of the connection changes
+          if(xhttp.readyState == 4 && xhttp.status == 200){ //Check that it has loaded and that it loaded it succesfully
+            /* xhttp.responseText stores the HTML data */
+            var data = document.createElement("DIV");
+            document.getElementById("playground").appendChild(data);
+            console.log(data.getElementsByClassName("info").map(function(){return document.getElementsByClassName("content")[0]});
+          }
+        }
+        xhttp.send();
+      }
+    </script>
   </head>
   <body>
+    <div id="playground" height="0" width="0" style="display: none;"> You shouldn't be able to see this :P :/</div>
     <center>Use the field below. It has a template built-in: use it if you like!<br/>
     <textarea rows="10" cols="20"><h1>@username</h1>
 "@comment"</textarea><br/>
