@@ -28,7 +28,7 @@
             var output = "";
             var format = document.getElementById("format").innerHTML;
             for(var i = 0; i < posters.length; i++){
-              output += format.replace(/@comment/gi, comments[i]).replace(/@username/gi, "posters[i])
+              output += format.replace(/@comment/gi, comments[i]).replace(/@username/gi, posters[i])
             }
             document.getElementById("result").innerHTML = "<textarea>" + output + "</textarea>";
           }
