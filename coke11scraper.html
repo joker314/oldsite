@@ -23,8 +23,8 @@
               comments.reverse();
               posters.reverse();
             }
-            comments.map(function(el){return el.slice(1, -1).trim();});
-            posters.map(function(el){return el.slice(1, -1).trim();});
+            console.log(comments);
+            console.log(comments.map(String.prototype.trim));
             var output = "";
             var format = document.getElementById("format").value;
             for(var i = 0; i < posters.length; i++){
