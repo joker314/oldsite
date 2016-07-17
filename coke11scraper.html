@@ -11,7 +11,7 @@
             /* xhttp.responseText stores the HTML data */
             var data = document.createElement("DIV");
             document.getElementById("playground").appendChild(data);
-            console.log(data.getElementsByClassName("info").map(function(){return document.getElementsByClassName("content")[0]});
+            console.log(data.getElementsByClassName("info").map(function(){return document.getElementsByClassName("content")[0]}));
           }
         }
         xhttp.send();
