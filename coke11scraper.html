@@ -10,7 +10,7 @@
           if(xhttp.readyState == 4 && xhttp.status == 200){ //Check that it has loaded and that it loaded it succesfully
             /* xhttp.responseText stores the HTML data */
             var data = document.createElement("DIV");
-            data.innerHTML = xhttp.responseText.replace(/[\s\S]+?<body>([\s\S]+?)<\/body>[\s\S]+?/, "$1");
+            data.innerHTML = xhttp.responseText;
             document.getElementById("playground").appendChild(data);
             console.log(Array.prototype.map(function(){return document.getElementsByClassName("content")[0]}, data.getElementsByClassName("info")));
           }
