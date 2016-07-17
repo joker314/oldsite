@@ -2,7 +2,7 @@
   <head>
     <title>Coke11's Scraper</title>
     <script>
-      scrapeComments(id, format){
+      function scrapeComments(id, format){
         var url = "https://crossorigin.me/" + "https://scratch.mit.edu/site-api/comments/project/" + id + "/"; //Work out the URL
         var xhttp = new XMLHttpRequest(); //Create an AJAX object
         xhttp.open("GET", url); //Open a request with the URL calculated
