@@ -14,7 +14,7 @@
               data.innerHTML = xhttp.responseText;
               document.getElementById("playground").appendChild(data);
               window.setTimeout(scrapeComments, 50, offset + 1)
-          } else if (status == 404){
+          } else if (xhttp.status == 404){
             var comments = toArray(document.querySelectorAll("#playground > div > li > div > .info > .content")).map(function(el){return el.innerHTML;});
             var posters = toArray(document.querySelectorAll("#playground > div > li > div > .info > .name > a")).map(function(el){return el.innerHTML;});
             console.log(posters);
