@@ -19,7 +19,18 @@
             var comments = toArray(document.querySelectorAll("#playground > div > li > div > .info > .content")).map(function(el){return el.innerHTML;});
             var posters = toArray(document.querySelectorAll("#playground > div > li > div > .info > .name > a")).map(function(el){return el.innerHTML;});
             document.getElementById("result").innerHTML = "Data aquired, formatting...";
-            console.log(posters);
+            if(document.getElementById("sort").value == "bot"){
+              comments.reverse();
+              posters.reverse();
+            }
+            comments.map(function(el){return el.trim();});
+            posters.map(function(el){return el.trim();});
+            var output = "";
+            var format = document.getElementById("format").innerHTML;
+            for(var i = 0; i < posters.length; i++){
+              output += format.replace(/@comment/gi, comments[i]).replace(/@username/gi, "posters[i])
+            }
+            document.getElementById("result").innerHTML = "<textarea>" + output + "</textarea>";
           }
         }
         };
@@ -37,19 +48,18 @@
   <body>
     <div id="playground" height="0" width="0" style="display: none;"></div>
     <center>Use the field below. It has a template built-in: use it if you like!<br/>
-    <textarea rows="10" cols="20"><h1>@username</h1>
+    <textarea rows="10" cols="20" id="format"><h1>@username</h1>
 "@comment"</textarea><br/>
-    Older comments appear at the <select><option vaue="top">top</option><option vaue="bot">bottom</option></select> of the page.
+    Newer comments appear at the <select id="sort"><option value="top">top</option><option value="bot">bottom</option></select> of the page.
     <button>Do It!</button>
     <table border="1">
       <tbody>
         <tr><td><b>Code</b></td><td><b>Meaning</b></td></tr>
-        <tr><td>@username</td><td>A linked username to the profile of the person who made the comment</td></tr>
-        <tr><td>@unlinked</td><td>An ulinked username of the person who made the comment</td></tr>
+        <tr><td>@username</td><td>The username of the person who made the comment</td></tr>
         <tr><td>@comment</td><td>The text within the comment</td></tr>
       </tbody>
     </table>
-    <h1 id="result"></h1>
+    <h1 id="result">Your result will appear here!</h1>
     </center>
   </body>
 </html>
