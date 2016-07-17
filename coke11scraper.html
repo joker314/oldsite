@@ -3,7 +3,7 @@
     <title>Coke11's Scraper</title>
     <script>
       function scrapeComments(id, offset){
-        var url = "https://crossorigin.me/" + "https://scratch.mit.edu/site-api/comments/project/" + id + "/"; //Work out the URL
+        var url = "https://crossorigin.me/" + "https://scratch.mit.edu/site-api/comments/project/" + id + "/?page=" + offset; 
         var xhttp = new XMLHttpRequest(); //Create an AJAX object
         xhttp.open("GET", url); //Open a request with the URL calculated
         xhttp.onreadystatechange = function(){ //When the status of the connection changes
