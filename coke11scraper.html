@@ -12,8 +12,8 @@
             var data = document.createElement("DIV");
             data.innerHTML = xhttp.responseText;
             document.getElementById("playground").appendChild(data);
-            var content = toArray(document.querySelectorAll(".playground > div > div > .content")).map(function(el){return el.innerHTML;});
-            console.log(content)
+            var comments = toArray(document.querySelectorAll(".playground > div > li > div > .info")).map(function(el){return el.innerHTML;});
+            console.log(comments)
           }
         }
         xhttp.send();
