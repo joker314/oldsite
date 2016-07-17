@@ -3,6 +3,7 @@
     <title>Coke11's Scraper</title>
     <script>
       function scrapeComments(id, offset){
+        console.log(offset);
         var url = "https://crossorigin.me/" + "https://scratch.mit.edu/site-api/comments/project/" + id + "/?page=" + offset; 
         var xhttp = new XMLHttpRequest(); //Create an AJAX object
         window.pageNo = offset; //Bind for the later lambda
