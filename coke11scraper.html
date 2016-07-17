@@ -5,8 +5,6 @@
       function scrapeComments(id, offset){
         var url = "https://crossorigin.me/" + "https://scratch.mit.edu/site-api/comments/project/" + id + "/?page=" + offset; 
         var xhttp = new XMLHttpRequest(); //Create an AJAX object
-        window.pageNo = offset; //Bind for the later lambda
-                console.log(window.pageNo);
         xhttp.open("GET", url); //Open a request with the URL calculated
         xhttp.onreadystatechange = function(){ //When the status of the connection changes
           if(xhttp.readyState == 4){ //Check that it has loaded and that it loaded it succesfully
@@ -15,7 +13,7 @@
               var data = document.createElement("DIV");
               data.innerHTML = xhttp.responseText;
               document.getElementById("playground").appendChild(data);
-              window.setTimeout(scrapeComments, 50, window.pageNo + 1)
+              window.setTimeout(scrapeComments, 50, id, offset + 1)
           } else if (xhttp.status == 404){
             var comments = toArray(document.querySelectorAll("#playground > div > li > div > .info > .content")).map(function(el){return el.innerHTML;});
             var posters = toArray(document.querySelectorAll("#playground > div > li > div > .info > .name > a")).map(function(el){return el.innerHTML;});
