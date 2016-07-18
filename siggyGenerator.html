@@ -3,7 +3,6 @@
 <title>Signiture Generator</title>
 <style>
 body{
-  text-align:center;
   font-family: "helvetica neue",arial,sans-serif;
 }
 code{
@@ -18,9 +17,12 @@ span{
 </style>
 </head>
 <body>
+  <center>
 <h1>Signiture Generator</h1>
-What text do you want in your signature? <input type="text" id="text" /> <button onclick="go();">Go!</button><br/>
-<code id="result"></code><br/><span id="display"></span>
+What text do you want in your signature? <input type="text" id="text" onkeyup="go();" /> <button onclick="go();">Go!</button><br/>
+</center><code id="result"></code><br/><span id="display"></span>
+
+<b>Credit to Macie1234 for making the colours brighter. Jokebookservice1 made the original system.</b>
 <script>
   var mix = {r: 200, g: 200, b: 255}
   // uncomment next line for lighter colors
