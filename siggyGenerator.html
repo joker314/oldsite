@@ -21,15 +21,23 @@ span{
 What text do you want in your signature? <input type="text" id="text" /> <button onclick="go();">Go!</button><br/>
 <code id="result"></code><br/><span id="display"></span>
 <script>
+  const mix = {r: 255, g: 255, b: 255}
   function go(){
     console.log("Initiated Function!");
     var text = document.getElementById("text").value;
     out = [];
     display = [];
-    for(var i = 0; i < text.length; i++){
-    var colour = String(Math.random()).slice(2, 8);
-    out.push("[color=#" + colour + "]" + text[i] + "[/color]");
-    display.push("<span style='color:#" + colour + "'>" + text[i] + "</span>");
+    for(var i = 0; i < text.length; i++) {
+      var r = Math.round(Math.random()*255);
+      var g = Math.round(Math.random()*255);
+      var b = Math.round(Math.random()*255);
+      r = ((r+mix.r)/2).toString(16);
+      g = ((g+mix.g)/2).toString(16);
+      b = ((b+mix.b)/2).toString(16);
+      var colour = r + g + b;
+      out.push("[color=#" + colour + "]" + text[i] + "[/color]");
+      display.push("<span style='color:#" + colour + "'>" + text[i] + "</span>");
+    }
   }
   document.getElementById("result").innerHTML = out.join(" ");
   document.getElementById("display").innerHTML = "<b>" + display.join(" ") + "</b>";
