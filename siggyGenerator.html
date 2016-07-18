@@ -9,6 +9,10 @@ code{
 background-color: lightgrey;
 font-family: monospace;
 color: black;
+float: left;
+}
+span{
+  float: left;
 }
 </style>
 </head>
@@ -28,7 +32,7 @@ What text do you want in your signature? <input type="text" id="text" /> <button
     display.push("<span style='color:#" + colour + "'>" + text[i] + "</span>");
   }
   document.getElementById("result").innerHTML = out.join(" ");
-  document.getElementById("display").innerHTML = display.join(" ");
+  document.getElementById("display").innerHTML = "<b>" + display.join(" ") "</b>"2;
   }
 </script>
 </body>
