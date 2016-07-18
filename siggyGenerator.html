@@ -4,11 +4,12 @@
 <style>
 body{
   text-align:center;
+  font-family: "helvetica neue",arial,sans-serif;
 }
 code{
-background-color: lightgrey;
+background-color: black;
 font-family: monospace;
-color: black;
+color: lightgrey;
 float: left;
 }
 span{
@@ -21,7 +22,9 @@ span{
 What text do you want in your signature? <input type="text" id="text" /> <button onclick="go();">Go!</button><br/>
 <code id="result"></code><br/><span id="display"></span>
 <script>
-  const mix = {r: 255, g: 255, b: 255};
+  var mix = {r: 200, g: 200, b: 255}
+  // uncomment next line for lighter colors
+  // var mix = {r: 255, g: 255, b: 255};
   function go() {
     console.log("Initiated Function!");
     var text = document.getElementById("text").value;
@@ -31,9 +34,9 @@ What text do you want in your signature? <input type="text" id="text" /> <button
       var r = Math.round(Math.random()*255);
       var g = Math.round(Math.random()*255);
       var b = Math.round(Math.random()*255);
-      r = ((r+mix.r)/2).toString(16);
-      g = ((g+mix.g)/2).toString(16);
-      b = ((b+mix.b)/2).toString(16);
+      r = ((r+mix.r)/2).toString(16).slice(0, 2);
+      g = ((g+mix.g)/2).toString(16).slice(0, 2);
+      b = ((b+mix.b)/2).toString(16).slice(0, 2);
       var colour = r + g + b;
       out.push("[color=#" + colour + "]" + text[i] + "[/color]");
       display.push("<span style='color:#" + colour + "'>" + text[i] + "</span>");
