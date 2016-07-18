@@ -37,7 +37,7 @@ What text do you want in your signature? <input type="text" id="text" onkeyup="g
       b = ((b+mix.b)/2).toString(16).slice(0, 2);
       var colour = r + g + b;
       if (text[i] == " "){
-      out.push(" ");
+      out.push("&nbsp;");
       display.push("&nbsp;");
       } else{
         out.push("[color=#" + colour + "]" + text[i] + "[/color]");
