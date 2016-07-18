@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Signiture Generator</title>
+<style>
+body{
+  text-align:center;
+}
+code{
+background-color: lightgrey;
+font-family: monospace;
+color: black;
+}
+</style>
+</head>
+<body>
+<h1>Signiture Generator</h1>
+What text do you want in your signature? <input type="text" id="text" /> <button onclick="go();">Go!</button>
+<code id="result"></code><br/><span id="display"></span>
+<script>
+  function go(){
+    var text = document.getElementById("text").value;
+    out = []
+    display = []
+    for(var i = 0; i < text.length; i++){
+    var colour = String(Math.random()).slice(2, 6);
+    out.push("[color=#" + colour + "]" + text[i] + "[/color]");
+    display.push("<span style='color:#" + colour + "'>" + text[i] + "</span>");
+  }
+  document.getElementById("text").innerHTML = out.join(" ");
+  document.getElementById("text").innerHTML = display.join(" ");
+</script>
+</body>
+</html>
