@@ -27,7 +27,7 @@ What text do you want in your signature? <input type="text" id="text" /> <button
     out = [];
     display = [];
     for(var i = 0; i < text.length; i++){
-    var colour = String(Math.random()).slice(2, 8);
+    var colour = (Math.random()*255).toString(16) + (Math.random()*255).toString(16) + (Math.random()*255).toString(16);
     out.push("[color=#" + colour + "]" + text[i] + "[/color]");
     display.push("<span style='color:#" + colour + "'>" + text[i] + "</span>");
   }
