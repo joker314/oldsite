@@ -15,7 +15,7 @@ color: lightgrey;
 <body>
   <center>
 <h1>Signiture Generator</h1>
-What text do you want in your signature? <input type="text" id="text" onkeyup="go();" /> <button onclick="go();">Go!</button><br/>
+What text do you want in your signature? <input type="text" id="text" onkeyup="go();" placeholder="Start typing here..."/> <br/>
 </center><code id="result"></code><br/><span id="display"></span>
 <br/><br/><br/>
 <center>Credit to Macie1234 for making the colours brighter. Jokebookservice1 made the original system.</center>
@@ -36,8 +36,13 @@ What text do you want in your signature? <input type="text" id="text" onkeyup="g
       g = ((g+mix.g)/2).toString(16).slice(0, 2);
       b = ((b+mix.b)/2).toString(16).slice(0, 2);
       var colour = r + g + b;
-      out.push("[color=#" + colour + "]" + text[i] + "[/color]");
+      if (text[i] == " "){
+      out.push(" ");
+      display.push("&nbsp;");
+      } else{
+        out.push("[color=#" + colour + "]" + text[i] + "[/color]");
       display.push("<span style='color:#" + colour + "'>" + text[i] + "</span>");
+      }
     }
     document.getElementById("result").innerHTML = out.join(" ");
     document.getElementById("display").innerHTML = "<b>" + display.join("&nbsp;") + "</b>";
