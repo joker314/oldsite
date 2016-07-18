@@ -18,7 +18,7 @@ color: lightgrey;
 What text do you want in your signature? <input type="text" id="text" onkeyup="go();" placeholder="Start typing here..."/> <br/>
 </center><code id="result"></code><br/><span id="display"></span>
 <br/><br/><br/>
-<center>Credit to -stache- for making the colours brighter. jokebookservice1 made the original system. f1lip suggested the idea of one of these.</center>
+<center>Credit to -stache- (Macie1234) for making the colours brighter. jokebookservice1 made the original system. f1lip suggested the idea of one of these.</center>
 <script>
   var mix = {r: 200, g: 200, b: 255}
   // uncomment next line for lighter colors
@@ -37,8 +37,8 @@ What text do you want in your signature? <input type="text" id="text" onkeyup="g
       b = ((b+mix.b)/2).toString(16).slice(0, 2);
       var colour = r + g + b;
       if (text[i] == " "){
-      out.push("&nbsp;");
-      display.push("&nbsp;");
+      out.push("&ensp;");
+      display.push("&ensp;");
       } else{
         out.push("[color=#" + colour + "]" + text[i] + "[/color]");
       display.push("<span style='color:#" + colour + "'>" + text[i] + "</span>");
