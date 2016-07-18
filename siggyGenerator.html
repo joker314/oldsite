@@ -21,7 +21,7 @@ span{
 <h1>Signiture Generator</h1>
 What text do you want in your signature? <input type="text" id="text" onkeyup="go();" /> <button onclick="go();">Go!</button><br/>
 </center><code id="result"></code><br/><span id="display"></span>
-<br/>
+<br/><br/><br/>
 <b>Credit to Macie1234 for making the colours brighter. Jokebookservice1 made the original system.</b>
 <script>
   var mix = {r: 200, g: 200, b: 255}
@@ -44,7 +44,7 @@ What text do you want in your signature? <input type="text" id="text" onkeyup="g
       display.push("<span style='color:#" + colour + "'>" + text[i] + "</span>");
     }
     document.getElementById("result").innerHTML = out.join(" ");
-    document.getElementById("display").innerHTML = "<b>" + display.join(" ") + "</b>";
+    document.getElementById("display").innerHTML = "<b>" + display.join("&nbsp;") + "</b>";
   }
 </script>
 </body>
