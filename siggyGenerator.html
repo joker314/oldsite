@@ -14,16 +14,16 @@ color: black;
 </head>
 <body>
 <h1>Signiture Generator</h1>
-What text do you want in your signature? <input type="text" id="text" /> <button onclick="go();">Go!</button>
+What text do you want in your signature? <input type="text" id="text" /> <button onclick="go();">Go!</button><br/>
 <code id="result"></code><br/><span id="display"></span>
 <script>
   function go(){
     console.log("Initiated Function!");
     var text = document.getElementById("text").value;
-    out = []
-    display = []
+    out = [];
+    display = [];
     for(var i = 0; i < text.length; i++){
-    var colour = String(Math.random()).slice(2, 6);
+    var colour = String(Math.random()).slice(2, 8);
     out.push("[color=#" + colour + "]" + text[i] + "[/color]");
     display.push("<span style='color:#" + colour + "'>" + text[i] + "</span>");
   }
