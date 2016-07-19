@@ -1,22 +1,51 @@
-<html>
+html>
 <head>
 <title>Signiture Generator</title>
 <style>
-body{
-  font-family: "helvetica neue",arial,sans-serif;
+/* constains some of CaptainUI - DatOneLefty*/
+* {
+									/* Font */
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+font-family: 'Open Sans', sans-serif;
+}
+div.nav { 								/* Navbar */
+background-color: #101010;
+color: white;
+left: 0;
+right: 0;
+margin: 0;
+font-family: 'Ubuntu Mono', monospace;
 }
 code{
 background-color: black;
 font-family: monospace;
 color: lightgrey;
 }
+div.login {								/* Nice login box */
+border: 1px solid gray;
+padding: 3%;
+margin: 2%;
+width: 50%;
+border-radius: 5px;
+}
+
+
+
+input {									/* Nice input bar */
+width: 100%;
+height: 30px;
+border: 0.5px solid black;
+border-radius: 5px;
+}
 </style>
 </head>
 <body>
   <center>
 <h1>Signiture Generator</h1>
-What text do you want in your signature? <input type="text" id="text" onkeyup="go();" placeholder="Start typing here..."/> <br/>
-</center><code id="result"></code><br/><span id="display"></span>
+<div class='login'>What text do you want in your signature? <input type="text" id="text" onkeyup="go();" placeholder="Start typing here..."/> <br/></div>
+<div class='login'><h2>Result</h2><hr><span id="display"></span></div>
+<div class='login'><h2>BBCode</h2><hr><code id="result"></code><br/></div>
+</center>
 <br/><br/><br/>
 <center>Credit to -stache- (Macie1234) for making the colours brighter. jokebookservice1 made the original system. f1lip suggested the idea of one of these.</center>
 <script>
