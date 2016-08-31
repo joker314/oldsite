@@ -1,9 +1,187 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Welcome</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>jokebookservice1</title>
+  <style>
+    * {
+      font-family: "Kristen ITC";
+      font-size: 20px;
+      background-color: lightgreen
+    }
+    #topEl{
+      text-align: center;
+      font-size: 40px;
+    }
+    a{
+      text-decoration: none;
+      color: blue
+    }
+    a:hover{
+      color: red;
+    }
+    *::selection{
+      background-color: purple;
+      color: white;
+    }
+    *::moz-selection{
+      background-color: purple;
+      color: white;
+    }
+    textarea{
+      background-color: lightgrey;
+      font-family: monospace;
+      width: 90%;
+      height: 100px;
+    }
+    .central{
+      text-align: center;
+    }
+    input[type=radio]{
+      height: ;
+    }
+    button{
+      background-color: lightgrey;
+      border-style: solid;
+      border-color: grey;
+      border-width: 5px;
+    }
+    button.selected{
+      border-color: green;
+    }
+  </style>
+  <script>
+        var encMode = 1;
+    function enc(val){
+      var encoder = (encMode)? btoa : atob;
+      var ret = document.getElementById("out").innerHTML = encoder(val);
+      return true;
+    }
+   function encCh(id){
+      var calling = document.getElementById("b64-" + id);
+      var sibling = document.getElementById("b64-" + Math.abs(id - 1));
+      
+      calling.className = "selected";
+      sibling.className = "";
+      
+      encMode = id;
+      enc(document.getElementById("encIn").value);
+      
+      return true;
+    }
+  </script>
 </head>
-<body bgcolor="lightgreen">
-<center>Hello, this is my current site</center>
-Hi, I like to code.
+<body>
+  <div id="topEl">Hi!</div>
+  Why hello there! I'm 
+  <a target="_blank" title="See my Scratch Profile (in a new tab)" href="http://scratch.mit.edu/users/jokebookservice1/">jokebookservice1</a>
+  on <a target="_blank" title="Visit Scratch's homepage (in a new tab)" href="http://scratch.mit.edu/">Scratch</a> and
+  <a target="_blank" href="http://github.com/joker314/" title="View my GitHub profile (in a new tab)">joker314</a> 
+  on <a target="_blank" href="http://github.com/" title="Visit Github's home page (in a new tab)">GitHub</a>!
+  <br/><br/>
+  Here is a base64 converter for you to use, in case you need to convert to or from base-64.
+  
+  <div class="central">
+    <textarea id="encIn" onkeyup="enc(this.value);" placeholder="Type your plaintext here"></textarea>
+    <textarea id="out" placeholder="Your output will be here" readonly></textarea>
+    <br/>
+    <button id="b64-0" onclick="encCh(0);">base64 to plaintext</button> <button class="selected" id="b64-1" onclick="encCh(1);">plaintext to base64</button>
+  </div>
+  
+<script id="jsbin-source-html" type="text/html"><!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>jokebookservice1</title>
+  <style>
+    * {
+      font-family: "Kristen ITC";
+      font-size: 20px;
+      background-color: lightgreen
+    }
+    #topEl{
+      text-align: center;
+      font-size: 40px;
+    }
+    a{
+      text-decoration: none;
+      color: blue
+    }
+    a:hover{
+      color: red;
+    }
+    *::selection{
+      background-color: purple;
+      color: white;
+    }
+    *::moz-selection{
+      background-color: purple;
+      color: white;
+    }
+    textarea{
+      background-color: lightgrey;
+      font-family: monospace;
+      width: 90%;
+      height: 100px;
+    }
+    .central{
+      text-align: center;
+    }
+    input[type=radio]{
+      height: ;
+    }
+    button{
+      background-color: lightgrey;
+      border-style: solid;
+      border-color: grey;
+      border-width: 5px;
+    }
+    button.selected{
+      border-color: green;
+    }
+  </style>
+  <script>
+        var encMode = 1;
+    function enc(val){
+      var encoder = (encMode)? btoa : atob;
+      var ret = document.getElementById("out").innerHTML = encoder(val);
+      return true;
+    }
+   function encCh(id){
+      var calling = document.getElementById("b64-" + id);
+      var sibling = document.getElementById("b64-" + Math.abs(id - 1));
+      
+      calling.className = "selected";
+      sibling.className = "";
+      
+      encMode = id;
+      enc(document.getElementById("encIn").value);
+      
+      return true;
+    }
+  <\/script>
+</head>
+<body>
+  <div id="topEl">Hi!</div>
+  Why hello there! I'm 
+  <a target="_blank" title="See my Scratch Profile (in a new tab)" href="//scratch.mit.edu/users/jokebookservice1/">jokebookservice1</a>
+  on <a target="_blank" title="Visit Scratch's homepage (in a new tab)" href="//scratch.mit.edu/">Scratch</a> and
+  <a target="_blank" href="//github.com/joker314/" title="View my GitHub profile (in a new tab)">joker314</a> 
+  on <a target="_blank" href="//github.com/" title="Visit Github's home page (in a new tab)">GitHub</a>!
+  <br/><br/>
+  Here is a base64 converter for you to use, in case you need to convert to or from base-64.
+  
+  <div class="central">
+    <textarea id="encIn" onkeyup="enc(this.value);" placeholder="Type your plaintext here"></textarea>
+    <textarea id="out" placeholder="Your output will be here" readonly></textarea>
+    <br/>
+    <button id="b64-0" onclick="encCh(0);">base64 to plaintext</button> <button class="selected" id="b64-1" onclick="encCh(1);">plaintext to base64</button>
+  </div>
+  </body>
+</html></script>
+
 </body>
 </html>
+ @joker314
