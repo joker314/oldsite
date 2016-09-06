@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Convert Grade to Year</title>
+    <style>
+      *{
+ font-family: Arial, Calibri, monospace; 
+  text-align: center;
+  font-size: 50px;
+}
+input{
+  border-radius: 5px;
+  width: 70px;
+  text-align: center;
+  font-family: monospace;
+}
+.equals{
+  color: blue;
+}
+    </style>
+  </head>
+  <body>
+    <div>Year <input maxlength="2" onkeyup="upd(0);"/> </div>
+    <span class="equals">=</span>
+    <div><input onkeyup="upd(1);" maxlength="2"/><sup>th</sup> Grade</div>
+    <script>
+function upd(which){
+  var q = document.querySelectorAll("input");
+  console.log(which);
+  if(which === 0){
+    q[1].value = Number(q[0].value) - 1;
+  } else{
+    q[0].value = Number(q[1].value) + 1;
+  }
+}
+    </script>
+    
+  </body>
+</html>
