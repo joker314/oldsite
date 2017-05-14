@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mario and Luigi</title>
+</head>
+<body>
+Hi, jokebookservice1 here, a developer of the isOnline extension. Somebody asked for help with a maths problem, so here you go! :) <div class="br"></div>
+  <span class="s"></span> = <span class="d"></span> ÷ <span class="t"></span>
+  <div class="info">
+    Each minute, <span class="m"></span> travels a certain distance more than <span class="l"></span>. 
+  </div>
+  <div class="info">
+    Let's work out what this distance is.
+  </div>
+  <span class="l"></span><sub><span class="t"></span></sub>
+  -
+  <span class="m"></span><sub><span class="t"></span></sub>
+  = <input maxlength="1" onkeyup="check1();" class="check1">
+  - <input maxlength="1" onkeyup="check1();" class="check1"> = <input maxlength="1" onkeyup="check1();" class="check1"> mins.
+  <div class="info unlock1">The problem states that <div class="br"></div>
+    
+    <span class="m"></span><sub><span class="s"></span></sub>
+    -<span class="l"></span><sub><span class="s"></span></sub> = <input class="digTWO" value="10" disabled> mph
+    = <input class="digTWO" value="10" disabled> ÷ <input maxlength="2" class="digTWO check2" onkeyup="check2();"> = <sup><input maxlength="1" class="check2" onkeyup="check2();"></sup>/<sub><input maxlength="1" class="check2"onkeyup="check2();"></sub> mi per min
+    </div>
+    
+  <div class="info unlock2">
+    Note that if <span class="m"></span> travels <div class="br"> ⅙ × 5 miles</div> more than <span class="l"></span> after 5 minutes, and they finish the race, then in the extra minute, <span class="l"></span> has to make that distance to finish the race. So in 1 minute, <span class="l"></span> travels <div class="br">⅙ × 5 = <sup><input maxlength="1" class="check3" onkeyup="check3();"></sup>/<sub><input maxlength="1" class="check3" onkeyup="check3();"></sub> miles</div>
+  </div>
+  <div class="info unlock3">
+    Finally, we need to convert the units back to mph. <div class="br">
+    ⅚ × <input maxlength="2" class="digTWO check4" onkeyup="check4();"> = <sup><input maxlength="3" class="digTHREE check4" onkeyup="check4();"></sup>/<sub><input value="6" disabled></sub> = <input maxlength="2" class="digTWO check4" onkeyup="check4();">mph
+    </div>
+  </div>
+  <div class="info unlock4">
+    The problem has been solved, but if you want to know how far they travelled, you can take the following rearrangement of the formula at the top of the page <div class="br"><span class="d"></span> = <span class="s"></span> × <span class="t"></span></div> If you plug in the values for <span class="l"></span>, <div class="br"><span class="d"></span> = <input disabled value="50" class="digTWO"> × <input disabled value="0.1" class="digTHREE"> = <input disabled value="5"> miles.</div> So there you go, thanks for sticking along, THE END! :)
+  </div>
+  <style>
+    * {
+  font-size: 50px;
+}
+
+.s:before{
+  background-color: yellow;
+  content: "s";
+  font-style: italic;
+  padding: 0px 4px;
+  text-align: center;
+}
+.s:after{
+  content: "peed"
+}
+
+.d:before{
+  background-color: lightgreen;
+  content: "d";
+  font-style: italic;
+  padding: 0px 4px;
+  text-align: center;
+}
+
+.d:after{
+  content: "istance"
+}
+
+.t:before{
+  background-color: pink;
+  content: "t";
+  font-style: italic;
+  padding: 0px 4px;
+  text-align: center;
+}
+
+.t:after{
+  content: "ime"
+}
+
+.m:before{
+  background-color: black;
+  color: white;
+  content: "M";
+  font-style: italic;
+  padding: 0px 4px;
+  text-align: center;
+}
+
+.m:after{
+  content: "ario"
+}
+
+.l:before{
+  background-color: black;
+  color: white;
+  content: "L";
+  font-style: italic;
+  padding: 0px 4px;
+  text-align: center;
+}
+
+.l:after{
+  content: "uigi"
+}
+
+.info{
+  padding: 20px;
+  background-color: lightblue;
+  margin: 15px;
+}
+
+.br{
+  margin: 10px;
+}
+
+tbody.algebra > tr > td{
+  padding: 3px;
+}
+
+sub > span {
+ font-size: 30px; 
+}
+
+input{
+  width: 30px;
+  border: solid blue 1px;
+}
+input[disabled]{
+  border-color: green;
+}
+input.digTWO{
+  width: 60px;
+}
+input.digTHREE{
+  width: 90px;
+}
+
+button{
+  background-color: green;
+  border: none;
+  color: white;
+}
+
+.unlock1, .unlock2, .unlock3, .unlock4{
+  display: none;
+}
+  </style>
+  <script>
+    function check1(){
+  var exit = false;
+  var results = [6, 5, 1];
+  var targets = document.getElementsByClassName("check1");
+  for(var i = 0; i < targets.length; i++){
+    if(results[i] == targets[i].value){
+      targets[i].style.borderColor = "green";
+      targets[i].disabled = true;
+    } else {
+      exit = true;
+      targets[i].style.borderColor = "red";
+    }
+  }
+  if(!exit){
+    document.getElementsByClassName("unlock1")[0].style.display = "block";
+  }
+}
+function check2(){
+  var exit = false;
+  var results = [60, 1, 6];
+  var targets = document.getElementsByClassName("check2");
+  for(var i = 0; i < targets.length; i++){
+    if(results[i] == targets[i].value){
+      targets[i].style.borderColor = "green";
+      targets[i].disabled = true;
+    } else {
+      exit = true;
+      targets[i].style.borderColor = "red";
+    }
+  }
+  if(!exit){
+    document.getElementsByClassName("unlock2")[0].style.display = "block";
+  }
+}
+function check3(){
+  var exit = false;
+  var results = [5, 6];
+  var targets = document.getElementsByClassName("check3");
+  for(var i = 0; i < targets.length; i++){
+    if(results[i] == targets[i].value){
+      targets[i].style.borderColor = "green";
+      targets[i].disabled = true;
+    } else {
+      exit = true;
+      targets[i].style.borderColor = "red";
+    }
+  }
+  if(!exit){
+    document.getElementsByClassName("unlock3")[0].style.display = "block";
+  }
+}
+function check4(){
+  var exit = false;
+  var results = [60, 300, 50];
+  var targets = document.getElementsByClassName("check4");
+  for(var i = 0; i < targets.length; i++){
+    if(results[i] == targets[i].value){
+      targets[i].style.borderColor = "green";
+      targets[i].disabled = true;
+    } else {
+      exit = true;
+      targets[i].style.borderColor = "red";
+    }
+  }
+  if(!exit){
+    document.getElementsByClassName("unlock4")[0].style.display = "block";
+  }
+}
+  </script>
+</body>
+</html>
