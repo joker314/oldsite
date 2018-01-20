@@ -8,7 +8,7 @@
     function callback(){
       var projectId = Math.floor(Math.random() * 115480648) + 200;
       var internet = new XMLHttpRequest();
-      internet.open("GET", "https://http://cors-anywhere.herokuapp.com//https://scratch.mit.edu/projects/" + projectId);
+      internet.open("GET", "https://cors-anywhere.herokuapp.com/https://scratch.mit.edu/projects/" + projectId);
       internet.onreadystatechange = function(){
         if(internet.readyState == 4){            
           var t = document.getElementById("target");
